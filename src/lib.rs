@@ -1,5 +1,6 @@
 mod insertion_sort;
 mod linear_search;
+mod add_binary_integers;
 
 #[cfg(test)]
 mod tests {
@@ -87,5 +88,12 @@ mod tests {
         let x = 2;
         let output = linear_search::linear_search::linear_search(input, x);
         assert_eq!(None, output);
+    }
+    #[test]
+    fn add_binary_integers_sanity() {
+        let a = vec!(1,0,0,1,0,1);
+        let b = vec!(1,0,0,0,0,1);
+        let output = add_binary_integers::add_binary_integers::add_binary_integers(a, b);
+        assert_eq!(vec!(1,0,0,0,1,1,0), output);
     }
 }
