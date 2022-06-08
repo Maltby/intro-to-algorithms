@@ -1,4 +1,5 @@
 mod insertion_sort;
+mod linear_search;
 
 #[cfg(test)]
 mod tests {
@@ -71,6 +72,20 @@ mod tests {
         let input = vec!();
         let len = input.len();
         let output = insertion_sort::insertion_sort::monotonically_decreasing(input, len);
-        assert_eq!(vec!() as Vec<isize>, output)
+        assert_eq!(vec!() as Vec<isize>, output);
+    }
+    #[test]
+    fn linear_search_sanity() {
+        let input = vec!(5,5,5,5,1,5);
+        let x = 1;
+        let output = linear_search::linear_search::linear_search(input, x);
+        assert_eq!(Some(4), output);
+    }
+    #[test]
+    fn linear_search_insanity() {
+        let input = vec!(5,5,5,5,1,5);
+        let x = 2;
+        let output = linear_search::linear_search::linear_search(input, x);
+        assert_eq!(None, output);
     }
 }
